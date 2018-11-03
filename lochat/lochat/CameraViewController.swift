@@ -217,6 +217,7 @@ class CameraViewController: UIViewController, CLLocationManagerDelegate, UIGestu
         let longitude = location?.coordinate.longitude
         let now = Date()
         updateFrames(latitude: Float(latitude!), longitude: Float(longitude!))
+
     }
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         print("didChangeAuthorization")
