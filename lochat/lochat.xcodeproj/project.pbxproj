@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4F936A78A549120EDF481DEA /* Pods_lochat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF9100241D1A1E162F5C3BD /* Pods_lochat.framework */; };
 		59910773218DB2BB0061BE15 /* RealmModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59910772218DB2BB0061BE15 /* RealmModels.swift */; };
+		59910775218E0A3B0061BE15 /* CenterBigTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59910774218E0A3B0061BE15 /* CenterBigTabViewController.swift */; };
 		59A49185218D6BD2005C7E0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A49184218D6BD2005C7E0E /* AppDelegate.swift */; };
 		59A4918C218D6BD2005C7E0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A4918A218D6BD2005C7E0E /* Main.storyboard */; };
 		59A4918E218D6BD3005C7E0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59A4918D218D6BD3005C7E0E /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		32EFB95890F752BC5C0C5458 /* Pods-lochat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lochat.release.xcconfig"; path = "Pods/Target Support Files/Pods-lochat/Pods-lochat.release.xcconfig"; sourceTree = "<group>"; };
 		3D23FDD6971F63B4728A9622 /* Pods-lochatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lochatUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-lochatUITests/Pods-lochatUITests.release.xcconfig"; sourceTree = "<group>"; };
 		59910772218DB2BB0061BE15 /* RealmModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModels.swift; sourceTree = "<group>"; };
+		59910774218E0A3B0061BE15 /* CenterBigTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterBigTabViewController.swift; sourceTree = "<group>"; };
 		59A49181218D6BD2005C7E0E /* lochat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lochat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A49184218D6BD2005C7E0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59A4918B218D6BD2005C7E0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		59A49183218D6BD2005C7E0E /* lochat */ = {
 			isa = PBXGroup;
 			children = (
+				59910774218E0A3B0061BE15 /* CenterBigTabViewController.swift */,
 				59A491C6218D9ADF005C7E0E /* GoogleService-Info.plist */,
 				59A491C4218D93B6005C7E0E /* globals.swift */,
 				59A491C2218D925E005C7E0E /* BaseViewController.swift */,
@@ -505,6 +508,7 @@
 				59A491B9218D8D8E005C7E0E /* QRViewController.swift in Sources */,
 				59A49185218D6BD2005C7E0E /* AppDelegate.swift in Sources */,
 				59A491B7218D8D7A005C7E0E /* EntranceViewController.swift in Sources */,
+				59910775218E0A3B0061BE15 /* CenterBigTabViewController.swift in Sources */,
 				59A491C1218D8EC9005C7E0E /* HighlightsViewController.swift in Sources */,
 				59A491C3218D925E005C7E0E /* BaseViewController.swift in Sources */,
 				59A491BD218D8DC7005C7E0E /* TimelineViewController.swift in Sources */,

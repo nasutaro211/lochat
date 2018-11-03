@@ -114,10 +114,17 @@ extension QRViewController:AVCaptureMetadataOutputObjectsDelegate {
 //        }
 //        UserDefaults.standard.set(true, forKey: UDKey_isJoinning)
 //        UserDefaults.standard.set(joiningEvent.eventID, forKey: UDKey_joinedEventID)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let tabJoiningViewController = storyboard.instantiateViewController(withIdentifier: "TabJoiningViewController") as! UITabBarController
-        tabJoiningViewController.selectedIndex = 1
-        self.present(tabJoiningViewController, animated: true, completion: nil)
+        if joiningEvent.isHolded(){
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let tabJoiningViewController = storyboard.instantiateViewController(withIdentifier: "TabJoiningViewController") as! UITabBarController
+            tabJoiningViewController.selectedIndex = 1
+            self.present(tabJoiningViewController, animated: true, completion: nil)
+        }else{
+            let alert = UIAlertController(title: "おっと君は開けないよ", message: nil, preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(alertAction)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }
 

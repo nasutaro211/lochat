@@ -8,8 +8,11 @@
 
 import UIKit
 import CoreLocation
+import RealmSwift
 
 class CameraViewController: UIViewController, CLLocationManagerDelegate{
+    
+    var usableFrame: [Frame] = []
     
     var locationManager: CLLocationManager!
     override func viewDidLoad() {
@@ -31,17 +34,22 @@ class CameraViewController: UIViewController, CLLocationManagerDelegate{
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.first
-        let latitude1 = location?.coordinate.latitude
-        let longitude1 = location?.coordinate.longitude
-        let latitude = latitude1!
-        let longitude = longitude1!
+        let latitude = location?.coordinate.latitude
+        let longitude = location?.coordinate.longitude
         let now = Date()
-        Frame.returnMatchedFrames(lat: Float(latitude), long: Float(longitude),currentDate:now)
-        print("latitude: \(latitude1)\nlongitude:\(longitude1)")
+        updateFrames(latitude: Float(latitude!), longitude: Float(longitude!))
     }
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         print("didChangeAuthorization")
     }
-
+    
+    func updateFrames(latitude: Float, longitude: Float){
+        var newUsableFrame: [Frame] = []
+        Frame.returnMatchedFrames(lat: latitude, long: longitude).forEach { (frame) in
+            newUsableFrame.append(frame)
+        }
+        usableFrame = newUsableFrame
+        //TODO: フロントをアップデートする機能もつける
+    }
 }
 
