@@ -62,10 +62,10 @@ class Frame:Object{
     
 
     //   TODO: ここ
-    static func returnMatchedFrames(lat:Float,long:Float,currentDate:Date)->Results<Frame>{
+    static func returnMatchedFrames(lat:Float,long:Float)->Results<Frame>{
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyyMMddHHmmss"
-        let date = formatter.string(from: currentDate)
+        let date = formatter.string(from: Date())
         let realm = try! Realm()
         let frames = realm.objects(Frame.self)
         frames.forEach { (frame) in
@@ -91,6 +91,13 @@ class Event: Object{
     @objc dynamic var highlightImagesJSONStr = ""
     
     func isHolded()->Bool{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMddHHmmss"
+        let dateString = formatter.string(from: Date())
+ 
+        if startDate <= dateString && endDate >= dateString{
+            return true
+        }
         return false
     }
     

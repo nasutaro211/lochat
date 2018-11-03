@@ -35,8 +35,7 @@ class CameraViewController: UIViewController, CLLocationManagerDelegate{
         let longitude1 = location?.coordinate.longitude
         let latitude = latitude1!
         let longitude = longitude1!
-        let now = Date()
-        Frame.returnMatchedFrames(lat: Float(latitude), long: Float(longitude),currentDate:now)
+        Frame.returnMatchedFrames(lat: Float(latitude), long: Float(longitude))
         print("latitude: \(latitude1)\nlongitude:\(longitude1)")
     }
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
