@@ -48,9 +48,15 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - Realm (3.11.0):
+    - Realm/Headers (= 3.11.0)
+  - Realm/Headers (3.11.0)
+  - RealmSwift (3.11.0):
+    - Realm (= 3.11.0)
 
 DEPENDENCIES:
   - Firebase/Core
+  - RealmSwift
 
 SPEC CHECKSUMS:
   Firebase: 6691d47562a780c26281ce8464518faafc90c610
@@ -60,7 +66,9 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: 2b3a023a61239c8d002e6e4fcf4abce8eddce0e0
   GoogleUtilities: 8208aee3e97a1ae93d44c57e96c476a5a3b03f0a
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  Realm: 92f09a102692b96a9a10e9617f214f15c5ab85fc
+  RealmSwift: 5f0481cd658bb751c509314b964a35eaa264d2cf
 
-PODFILE CHECKSUM: 1cd53a1141467f960cf81f81d0919633ee804b50
+PODFILE CHECKSUM: 53e87697cf9324eb7be6af39e53bdfea0f8da79a
 
 COCOAPODS: 1.4.0

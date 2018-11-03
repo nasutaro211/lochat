@@ -7,6 +7,7 @@ target 'lochat' do
 
   # Pods for lochat
 pod ‘Firebase/Core’
+pod 'RealmSwift'
 
   target 'lochatTests' do
     inherit! :search_paths
