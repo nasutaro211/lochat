@@ -248,8 +248,8 @@ extension CameraViewController{
         //サイズ変える
 
         //シャッターボタンを追加
-        shutterButton = UIButton(frame: CGRect(origin: CGPoint(x: 150,y :400), size: CGSize(width: 50, height: 50)))
-        shutterButton.center = CGPoint(x: view.frame.size.width/2, y: view.frame.size.height/2)
+        shutterButton = UIButton(frame: CGRect(origin: CGPoint(x: 150,y :400), size: CGSize(width: 70, height: 70)))
+        shutterButton.center = CGPoint(x: view.frame.size.width/2, y: 500)
         shutterButton.backgroundColor = mainColor.withAlphaComponent(0)
         shutterButton.layer.masksToBounds = true
         shutterButton.layer.cornerRadius = shutterButton.frame.size.width/2
