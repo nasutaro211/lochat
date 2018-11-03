@@ -7,14 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F936A78A549120EDF481DEA /* Pods_lochat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF9100241D1A1E162F5C3BD /* Pods_lochat.framework */; };
 		59A49185218D6BD2005C7E0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A49184218D6BD2005C7E0E /* AppDelegate.swift */; };
-		59A49187218D6BD2005C7E0E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A49186218D6BD2005C7E0E /* FirstViewController.swift */; };
-		59A49189218D6BD2005C7E0E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A49188218D6BD2005C7E0E /* SecondViewController.swift */; };
 		59A4918C218D6BD2005C7E0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A4918A218D6BD2005C7E0E /* Main.storyboard */; };
 		59A4918E218D6BD3005C7E0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59A4918D218D6BD3005C7E0E /* Assets.xcassets */; };
 		59A49191218D6BD3005C7E0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A4918F218D6BD3005C7E0E /* LaunchScreen.storyboard */; };
 		59A4919C218D6BD3005C7E0E /* lochatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A4919B218D6BD3005C7E0E /* lochatTests.swift */; };
 		59A491A7218D6BD3005C7E0E /* lochatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A491A6218D6BD3005C7E0E /* lochatUITests.swift */; };
+		59A491B5218D8D38005C7E0E /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A491B4218D8D38005C7E0E /* MypageViewController.swift */; };
+		59A491B7218D8D7A005C7E0E /* EntranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A491B6218D8D7A005C7E0E /* EntranceViewController.swift */; };
+		59A491B9218D8D8E005C7E0E /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A491B8218D8D8E005C7E0E /* QRViewController.swift */; };
+		59A491BB218D8DAC005C7E0E /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A491BA218D8DAC005C7E0E /* CameraViewController.swift */; };
+		59A491BD218D8DC7005C7E0E /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A491BC218D8DC7005C7E0E /* TimelineViewController.swift */; };
+		59A491BF218D8DDB005C7E0E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A491BE218D8DDB005C7E0E /* MapViewController.swift */; };
+		59A491C1218D8EC9005C7E0E /* HighlightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A491C0218D8EC9005C7E0E /* HighlightsViewController.swift */; };
+		59A491C3218D925E005C7E0E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A491C2218D925E005C7E0E /* BaseViewController.swift */; };
+		59A491C5218D93B6005C7E0E /* globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A491C4218D93B6005C7E0E /* globals.swift */; };
+		59A491C7218D9ADF005C7E0E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59A491C6218D9ADF005C7E0E /* GoogleService-Info.plist */; };
+		8EFCC7322CC9C35BF394A97C /* Pods_lochatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB6FD05063FF824E7D8D5FD9 /* Pods_lochatUITests.framework */; };
+		CD9467EA53D6A92151C894E8 /* Pods_lochatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BF6B2FEF75938D5F05C9021 /* Pods_lochatTests.framework */; };
 		E889857F218D8545004B508D /* HighlightsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E889857D218D8545004B508D /* HighlightsTableViewCell.swift */; };
 		E8898580218D8545004B508D /* HighlightsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E889857E218D8545004B508D /* HighlightsTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -37,10 +48,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1778689658417DA7B4AD942B /* Pods-lochatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lochatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lochatTests/Pods-lochatTests.debug.xcconfig"; sourceTree = "<group>"; };
+		270CA424E0768CB8DD1BEA23 /* Pods-lochatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lochatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-lochatTests/Pods-lochatTests.release.xcconfig"; sourceTree = "<group>"; };
+		32EFB95890F752BC5C0C5458 /* Pods-lochat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lochat.release.xcconfig"; path = "Pods/Target Support Files/Pods-lochat/Pods-lochat.release.xcconfig"; sourceTree = "<group>"; };
+		3D23FDD6971F63B4728A9622 /* Pods-lochatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lochatUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-lochatUITests/Pods-lochatUITests.release.xcconfig"; sourceTree = "<group>"; };
 		59A49181218D6BD2005C7E0E /* lochat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lochat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A49184218D6BD2005C7E0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		59A49186218D6BD2005C7E0E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		59A49188218D6BD2005C7E0E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		59A4918B218D6BD2005C7E0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		59A4918D218D6BD3005C7E0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59A49190218D6BD3005C7E0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,8 +64,23 @@
 		59A491A2218D6BD3005C7E0E /* lochatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lochatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A491A6218D6BD3005C7E0E /* lochatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lochatUITests.swift; sourceTree = "<group>"; };
 		59A491A8218D6BD3005C7E0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59A491B4218D8D38005C7E0E /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
+		59A491B6218D8D7A005C7E0E /* EntranceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceViewController.swift; sourceTree = "<group>"; };
+		59A491B8218D8D8E005C7E0E /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
+		59A491BA218D8DAC005C7E0E /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		59A491BC218D8DC7005C7E0E /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
+		59A491BE218D8DDB005C7E0E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		59A491C0218D8EC9005C7E0E /* HighlightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightsViewController.swift; sourceTree = "<group>"; };
+		59A491C2218D925E005C7E0E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		59A491C4218D93B6005C7E0E /* globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globals.swift; sourceTree = "<group>"; };
+		59A491C6218D9ADF005C7E0E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8BF6B2FEF75938D5F05C9021 /* Pods_lochatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lochatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B8A6C0E59153840E73318FA /* Pods-lochatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lochatUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lochatUITests/Pods-lochatUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A6463578130CCE7C200CE3CC /* Pods-lochat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lochat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lochat/Pods-lochat.debug.xcconfig"; sourceTree = "<group>"; };
 		E889857D218D8545004B508D /* HighlightsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightsTableViewCell.swift; sourceTree = "<group>"; };
 		E889857E218D8545004B508D /* HighlightsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighlightsTableViewCell.xib; sourceTree = "<group>"; };
+		FAF9100241D1A1E162F5C3BD /* Pods_lochat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lochat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB6FD05063FF824E7D8D5FD9 /* Pods_lochatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lochatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F936A78A549120EDF481DEA /* Pods_lochat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD9467EA53D6A92151C894E8 /* Pods_lochatTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,12 +104,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EFCC7322CC9C35BF394A97C /* Pods_lochatUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56B17CB02034E96D8E25A62E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAF9100241D1A1E162F5C3BD /* Pods_lochat.framework */,
+				8BF6B2FEF75938D5F05C9021 /* Pods_lochatTests.framework */,
+				FB6FD05063FF824E7D8D5FD9 /* Pods_lochatUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		59A49178218D6BD2005C7E0E = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +128,8 @@
 				59A4919A218D6BD3005C7E0E /* lochatTests */,
 				59A491A5218D6BD3005C7E0E /* lochatUITests */,
 				59A49182218D6BD2005C7E0E /* Products */,
+				9391914D89736FD10D5E167D /* Pods */,
+				56B17CB02034E96D8E25A62E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,10 +146,18 @@
 		59A49183218D6BD2005C7E0E /* lochat */ = {
 			isa = PBXGroup;
 			children = (
+				59A491C6218D9ADF005C7E0E /* GoogleService-Info.plist */,
+				59A491C4218D93B6005C7E0E /* globals.swift */,
+				59A491C2218D925E005C7E0E /* BaseViewController.swift */,
+				59A491C0218D8EC9005C7E0E /* HighlightsViewController.swift */,
+				59A491BC218D8DC7005C7E0E /* TimelineViewController.swift */,
+				59A491BE218D8DDB005C7E0E /* MapViewController.swift */,
+				59A491BA218D8DAC005C7E0E /* CameraViewController.swift */,
+				59A491B6218D8D7A005C7E0E /* EntranceViewController.swift */,
+				59A491B8218D8D8E005C7E0E /* QRViewController.swift */,
 				59A49184218D6BD2005C7E0E /* AppDelegate.swift */,
-				59A49186218D6BD2005C7E0E /* FirstViewController.swift */,
-				59A49188218D6BD2005C7E0E /* SecondViewController.swift */,
 				59A4918A218D6BD2005C7E0E /* Main.storyboard */,
+				59A491B4218D8D38005C7E0E /* MypageViewController.swift */,
 				E889857D218D8545004B508D /* HighlightsTableViewCell.swift */,
 				E889857E218D8545004B508D /* HighlightsTableViewCell.xib */,
 				59A4918D218D6BD3005C7E0E /* Assets.xcassets */,
@@ -134,6 +185,19 @@
 			path = lochatUITests;
 			sourceTree = "<group>";
 		};
+		9391914D89736FD10D5E167D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A6463578130CCE7C200CE3CC /* Pods-lochat.debug.xcconfig */,
+				32EFB95890F752BC5C0C5458 /* Pods-lochat.release.xcconfig */,
+				1778689658417DA7B4AD942B /* Pods-lochatTests.debug.xcconfig */,
+				270CA424E0768CB8DD1BEA23 /* Pods-lochatTests.release.xcconfig */,
+				9B8A6C0E59153840E73318FA /* Pods-lochatUITests.debug.xcconfig */,
+				3D23FDD6971F63B4728A9622 /* Pods-lochatUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,9 +205,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 59A491AB218D6BD3005C7E0E /* Build configuration list for PBXNativeTarget "lochat" */;
 			buildPhases = (
+				1CF8CA8EFBBDE8099610449A /* [CP] Check Pods Manifest.lock */,
 				59A4917D218D6BD2005C7E0E /* Sources */,
 				59A4917E218D6BD2005C7E0E /* Frameworks */,
 				59A4917F218D6BD2005C7E0E /* Resources */,
+				0F5B878604BD6E08465CFDEB /* [CP] Embed Pods Frameworks */,
+				5D0F74E08E8A00532DD6C63B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -158,9 +225,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 59A491AE218D6BD3005C7E0E /* Build configuration list for PBXNativeTarget "lochatTests" */;
 			buildPhases = (
+				B120ADF8AB711B551AA12557 /* [CP] Check Pods Manifest.lock */,
 				59A49193218D6BD3005C7E0E /* Sources */,
 				59A49194218D6BD3005C7E0E /* Frameworks */,
 				59A49195218D6BD3005C7E0E /* Resources */,
+				F2B77A336AA88D5ABA3AB119 /* [CP] Embed Pods Frameworks */,
+				27C21BF976C84024659DC51E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -176,9 +246,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 59A491B1218D6BD3005C7E0E /* Build configuration list for PBXNativeTarget "lochatUITests" */;
 			buildPhases = (
+				B45E864789FF8A6297D02E48 /* [CP] Check Pods Manifest.lock */,
 				59A4919E218D6BD3005C7E0E /* Sources */,
 				59A4919F218D6BD3005C7E0E /* Frameworks */,
 				59A491A0218D6BD3005C7E0E /* Resources */,
+				FF65B11FD282747F5ABE279A /* [CP] Embed Pods Frameworks */,
+				8636A611A34D5A15C106D88A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -240,6 +313,7 @@
 			files = (
 				59A49191218D6BD3005C7E0E /* LaunchScreen.storyboard in Resources */,
 				59A4918E218D6BD3005C7E0E /* Assets.xcassets in Resources */,
+				59A491C7218D9ADF005C7E0E /* GoogleService-Info.plist in Resources */,
 				E8898580218D8545004B508D /* HighlightsTableViewCell.xib in Resources */,
 				59A4918C218D6BD2005C7E0E /* Main.storyboard in Resources */,
 			);
@@ -261,15 +335,174 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0F5B878604BD6E08465CFDEB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-lochat/Pods-lochat-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-lochat/Pods-lochat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1CF8CA8EFBBDE8099610449A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-lochat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		27C21BF976C84024659DC51E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-lochatTests/Pods-lochatTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D0F74E08E8A00532DD6C63B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-lochat/Pods-lochat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8636A611A34D5A15C106D88A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-lochatUITests/Pods-lochatUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B120ADF8AB711B551AA12557 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-lochatTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B45E864789FF8A6297D02E48 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-lochatUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2B77A336AA88D5ABA3AB119 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-lochatTests/Pods-lochatTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF65B11FD282747F5ABE279A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-lochatUITests/Pods-lochatUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		59A4917D218D6BD2005C7E0E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59A49189218D6BD2005C7E0E /* SecondViewController.swift in Sources */,
+				59A491B5218D8D38005C7E0E /* MypageViewController.swift in Sources */,
+				59A491B9218D8D8E005C7E0E /* QRViewController.swift in Sources */,
 				59A49185218D6BD2005C7E0E /* AppDelegate.swift in Sources */,
+				59A491B7218D8D7A005C7E0E /* EntranceViewController.swift in Sources */,
+				59A491C1218D8EC9005C7E0E /* HighlightsViewController.swift in Sources */,
+				59A491C3218D925E005C7E0E /* BaseViewController.swift in Sources */,
+				59A491BD218D8DC7005C7E0E /* TimelineViewController.swift in Sources */,
+				59A491C5218D93B6005C7E0E /* globals.swift in Sources */,
 				E889857F218D8545004B508D /* HighlightsTableViewCell.swift in Sources */,
-				59A49187218D6BD2005C7E0E /* FirstViewController.swift in Sources */,
+				59A491BB218D8DAC005C7E0E /* CameraViewController.swift in Sources */,
+				59A491BF218D8DDB005C7E0E /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,15 +675,13 @@
 		};
 		59A491AC218D6BD3005C7E0E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6463578130CCE7C200CE3CC /* Pods-lochat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3KKXY5S9W2;
 				INFOPLIST_FILE = lochat/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eggplant.com.lochat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -460,15 +691,13 @@
 		};
 		59A491AD218D6BD3005C7E0E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32EFB95890F752BC5C0C5458 /* Pods-lochat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3KKXY5S9W2;
 				INFOPLIST_FILE = lochat/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eggplant.com.lochat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -478,17 +707,14 @@
 		};
 		59A491AF218D6BD3005C7E0E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1778689658417DA7B4AD942B /* Pods-lochatTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3KKXY5S9W2;
 				INFOPLIST_FILE = lochatTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eggplant.com.lochatTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -499,17 +725,14 @@
 		};
 		59A491B0218D6BD3005C7E0E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 270CA424E0768CB8DD1BEA23 /* Pods-lochatTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3KKXY5S9W2;
 				INFOPLIST_FILE = lochatTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eggplant.com.lochatTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -520,16 +743,13 @@
 		};
 		59A491B2218D6BD3005C7E0E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B8A6C0E59153840E73318FA /* Pods-lochatUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3KKXY5S9W2;
 				INFOPLIST_FILE = lochatUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eggplant.com.lochatUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -540,16 +760,13 @@
 		};
 		59A491B3218D6BD3005C7E0E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D23FDD6971F63B4728A9622 /* Pods-lochatUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3KKXY5S9W2;
 				INFOPLIST_FILE = lochatUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eggplant.com.lochatUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
