@@ -121,9 +121,7 @@ class Event: Object{
     @objc dynamic var highlightImagesJSONStr = ""
     
     func isHolded()->Bool{
-<<<<<<< HEAD
-        return true
-=======
+
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyyMMddHHmmss"
         let dateString = formatter.string(from: Date())
@@ -132,7 +130,6 @@ class Event: Object{
             return true
         }
         return false
->>>>>>> a73670488857e90eee5ce3f55ef202a3c69cf29e
     }
     
     convenience init(eventURL: String, afterAllSuccess: (() -> Void)?, afterFailed: @escaping ()->()){
