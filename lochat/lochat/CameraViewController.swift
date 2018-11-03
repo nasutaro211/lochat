@@ -7,24 +7,40 @@
 //
 
 import UIKit
+import CoreLocation
 
-class CameraViewController: UIViewController {
-
+class CameraViewController: UIViewController, CLLocationManagerDelegate{
+    
+    var locationManager: CLLocationManager!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupLocationManager()
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setupLocationManager(){
+        locationManager = CLLocationManager()
+        locationManager.delegate = self //delegateが位置情報に関する変更などを担っている
+        locationManager.requestWhenInUseAuthorization()
+        let status = CLLocationManager.authorizationStatus()
+        if status == .authorizedWhenInUse{
+            locationManager.distanceFilter = 10
+            locationManager.startUpdatingLocation()
+        }
     }
-    */
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations.first
+        let latitude = location?.coordinate.latitude
+        let longitude = location?.coordinate.longitude
+        
+        print("latitude: \(latitude)\nlongitude:\(longitude)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        print("didChangeAuthorization")
+    }
 
 }
+
