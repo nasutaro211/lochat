@@ -110,17 +110,10 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="QRコードを読み込んでイベントに参加しましょう" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NST-Ie-Cvw">
-                                <rect key="frame" x="-7" y="413" width="388" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7B-vR-kho">
                                 <rect key="frame" x="86" y="474" width="203" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="QRcameraに遷移"/>
+                                <state key="normal" title="Joining Event?"/>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pbp-zc-cbp" userLabel="Servicelogo">
                                 <rect key="frame" x="67" y="172" width="240" height="128"/>
@@ -135,6 +128,10 @@
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <navigationItem key="navigationItem" id="EgN-4H-CsC"/>
+                    <connections>
+                        <outlet property="backImageView" destination="pbp-zc-cbp" id="hLM-70-uAY"/>
+                        <outlet property="toQRButton" destination="F7B-vR-kho" id="3hP-TL-BD9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -302,7 +299,7 @@
         <!--TabJoiningViewController-->
         <scene sceneID="Z6L-eb-5L3">
             <objects>
-                <tabBarController id="rov-kx-1lv" userLabel="TabJoiningViewController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabJoiningViewController" id="rov-kx-1lv" userLabel="TabJoiningViewController" customClass="TabJoiningViewController" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vJW-tz-J0Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -361,7 +358,7 @@
         <!--TabPrepareViewControoler-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" userLabel="TabPrepareViewControoler" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" userLabel="TabPrepareViewControoler" customClass="TabPrepareViewControoler" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>

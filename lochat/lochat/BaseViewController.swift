@@ -19,6 +19,8 @@ class BaseViewController: UIViewController {
         //右側ノボタン
         let configItem = UIBarButtonItem(image: UIImage(named: "config"), style: .plain, target: self, action: #selector(self.toConfig))
         navigationItem.setRightBarButton(configItem, animated: true)
+        //真ん中のボタンを大きくする
+        
     }
     
     @objc func toConfig(){

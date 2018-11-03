@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,10 +18,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        FirebaseApp.configure()
-        if let tabvc = self.window!.rootViewController as? UITabBarController  {
-            tabvc.selectedIndex = 1 // 0 が一番左のタブ
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if UserDefaults.standard.bool(forKey: UDKey_isJoinning) {
+            //参加している時
+            let realm = try! Realm()
+            let joinningEvent = realm.object(ofType: Event.self, forPrimaryKey: UserDefaults.standard.string(forKey: UDKey_joinedEventID))
+            if joinningEvent!.isHolded() {
+                //イベント中だった時イベント開催tabページへ
+                self.window = UIWindow(frame: UIScreen.main.bounds)
+                let initialViewController = storyboard.instantiateViewController(withIdentifier: "TabJoiningViewController")
+                self.window?.rootViewController = initialViewController
+                self.window?.makeKeyAndVisible()
+            }else{
+                //イベントが終了していた時
+                UserDefaults.standard.set(false, forKey: UDKey_isJoinning)
+                //TODO:サーバーにGETリクエストしてImagePath配列のJSONデータをEventに保存しておく
+                //ログアウト後のページに戻る
+                if let tabvc = self.window!.rootViewController as? UITabBarController  {
+                    tabvc.selectedIndex = 1 // 0 が一番左のタブ
+                    let destination = tabvc.viewControllers![1] as! EntranceViewController
+                    destination.isJustLogout = true
+                    destination.logoutedEvent = realm.object(ofType: Event.self, forPrimaryKey: UserDefaults.standard.string(forKey: UDKey_joinedEventID))
+                }
+            }
+        }else{
+            //参加していない時
+            if let tabvc = self.window!.rootViewController as? UITabBarController  {
+                tabvc.selectedIndex = 1 // 0 が一番左のタブ
+            }
         }
+        
+        FirebaseApp.configure()
+
+
         return true
     }
 

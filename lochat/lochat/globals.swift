@@ -10,3 +10,8 @@ import Foundation
 import UIKit
 
 let mainFrame = UIScreen.main.bounds
+
+let UDKey_userID = "userID"
+let UDKey_userName = "userName"
+let UDKey_isJoinning = "isJoinning"
+let UDKey_joinedEventID = "joinedEventID"

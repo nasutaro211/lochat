@@ -9,22 +9,29 @@
 import UIKit
 
 class EntranceViewController: BaseViewController {
-
+    var isJustLogout = false
+    var logoutedEvent:Event?
+    @IBOutlet var toQRButton: UIButton!
+    @IBOutlet var backImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setButton()
+        setBackImage()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func didPushToQRButton(){
+        let destination = QRViewController()
+        self.present(destination, animated: true, completion: nil)
     }
-    */
+}
 
+extension EntranceViewController{
+    func setButton(){
+        toQRButton.addTarget(self, action: #selector(self.didPushToQRButton), for: .touchUpInside)
+    }
+    func setBackImage(){
+        //TOOD: 画像が来たらここでviewの背景とイメージを指定する
+        self.view.backgroundColor = .black
+    }
 }
