@@ -12,7 +12,6 @@ import CoreLocation
 class CameraViewController: UIViewController, CLLocationManagerDelegate{
     
     var locationManager: CLLocationManager!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLocationManager()
@@ -32,12 +31,14 @@ class CameraViewController: UIViewController, CLLocationManagerDelegate{
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.first
-        let latitude = location?.coordinate.latitude
-        let longitude = location?.coordinate.longitude
-        
-        print("latitude: \(latitude)\nlongitude:\(longitude)")
+        let latitude1 = location?.coordinate.latitude
+        let longitude1 = location?.coordinate.longitude
+        let latitude = latitude1!
+        let longitude = longitude1!
+        let now = Date()
+        Frame.returnMatchedFrames(lat: Float(latitude), long: Float(longitude),currentDate:now)
+        print("latitude: \(latitude1)\nlongitude:\(longitude1)")
     }
-    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         print("didChangeAuthorization")
     }
