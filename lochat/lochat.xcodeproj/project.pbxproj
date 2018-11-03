@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		59A49185218D6BD2005C7E0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A49184218D6BD2005C7E0E /* AppDelegate.swift */; };
+		59A49187218D6BD2005C7E0E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A49186218D6BD2005C7E0E /* FirstViewController.swift */; };
+		59A49189218D6BD2005C7E0E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A49188218D6BD2005C7E0E /* SecondViewController.swift */; };
+		59A4918C218D6BD2005C7E0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A4918A218D6BD2005C7E0E /* Main.storyboard */; };
+		59A4918E218D6BD3005C7E0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59A4918D218D6BD3005C7E0E /* Assets.xcassets */; };
+		59A49191218D6BD3005C7E0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A4918F218D6BD3005C7E0E /* LaunchScreen.storyboard */; };
+		59A4919C218D6BD3005C7E0E /* lochatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A4919B218D6BD3005C7E0E /* lochatTests.swift */; };
+		59A491A7218D6BD3005C7E0E /* lochatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A491A6218D6BD3005C7E0E /* lochatUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		59A49198218D6BD3005C7E0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 59A49179218D6BD2005C7E0E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 59A49180218D6BD2005C7E0E;
+			remoteInfo = lochat;
+		};
+		59A491A3218D6BD3005C7E0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 59A49179218D6BD2005C7E0E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 59A49180218D6BD2005C7E0E;
+			remoteInfo = lochat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		59A49181218D6BD2005C7E0E /* lochat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lochat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		59A49184218D6BD2005C7E0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		59A49186218D6BD2005C7E0E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		59A49188218D6BD2005C7E0E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		59A4918B218D6BD2005C7E0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		59A4918D218D6BD3005C7E0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		59A49190218D6BD3005C7E0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		59A49192218D6BD3005C7E0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59A49197218D6BD3005C7E0E /* lochatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lochatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		59A4919B218D6BD3005C7E0E /* lochatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lochatTests.swift; sourceTree = "<group>"; };
+		59A4919D218D6BD3005C7E0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59A491A2218D6BD3005C7E0E /* lochatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lochatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		59A491A6218D6BD3005C7E0E /* lochatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lochatUITests.swift; sourceTree = "<group>"; };
+		59A491A8218D6BD3005C7E0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		59A4917E218D6BD2005C7E0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59A49194218D6BD3005C7E0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59A4919F218D6BD3005C7E0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		59A49178218D6BD2005C7E0E = {
+			isa = PBXGroup;
+			children = (
+				59A49183218D6BD2005C7E0E /* lochat */,
+				59A4919A218D6BD3005C7E0E /* lochatTests */,
+				59A491A5218D6BD3005C7E0E /* lochatUITests */,
+				59A49182218D6BD2005C7E0E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		59A49182218D6BD2005C7E0E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				59A49181218D6BD2005C7E0E /* lochat.app */,
+				59A49197218D6BD3005C7E0E /* lochatTests.xctest */,
+				59A491A2218D6BD3005C7E0E /* lochatUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		59A49183218D6BD2005C7E0E /* lochat */ = {
+			isa = PBXGroup;
+			children = (
+				59A49184218D6BD2005C7E0E /* AppDelegate.swift */,
+				59A49186218D6BD2005C7E0E /* FirstViewController.swift */,
+				59A49188218D6BD2005C7E0E /* SecondViewController.swift */,
+				59A4918A218D6BD2005C7E0E /* Main.storyboard */,
+				59A4918D218D6BD3005C7E0E /* Assets.xcassets */,
+				59A4918F218D6BD3005C7E0E /* LaunchScreen.storyboard */,
+				59A49192218D6BD3005C7E0E /* Info.plist */,
+			);
+			path = lochat;
+			sourceTree = "<group>";
+		};
+		59A4919A218D6BD3005C7E0E /* lochatTests */ = {
+			isa = PBXGroup;
+			children = (
+				59A4919B218D6BD3005C7E0E /* lochatTests.swift */,
+				59A4919D218D6BD3005C7E0E /* Info.plist */,
+			);
+			path = lochatTests;
+			sourceTree = "<group>";
+		};
+		59A491A5218D6BD3005C7E0E /* lochatUITests */ = {
+			isa = PBXGroup;
+			children = (
+				59A491A6218D6BD3005C7E0E /* lochatUITests.swift */,
+				59A491A8218D6BD3005C7E0E /* Info.plist */,
+			);
+			path = lochatUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		59A49180218D6BD2005C7E0E /* lochat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59A491AB218D6BD3005C7E0E /* Build configuration list for PBXNativeTarget "lochat" */;
+			buildPhases = (
+				59A4917D218D6BD2005C7E0E /* Sources */,
+				59A4917E218D6BD2005C7E0E /* Frameworks */,
+				59A4917F218D6BD2005C7E0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = lochat;
+			productName = lochat;
+			productReference = 59A49181218D6BD2005C7E0E /* lochat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		59A49196218D6BD3005C7E0E /* lochatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59A491AE218D6BD3005C7E0E /* Build configuration list for PBXNativeTarget "lochatTests" */;
+			buildPhases = (
+				59A49193218D6BD3005C7E0E /* Sources */,
+				59A49194218D6BD3005C7E0E /* Frameworks */,
+				59A49195218D6BD3005C7E0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				59A49199218D6BD3005C7E0E /* PBXTargetDependency */,
+			);
+			name = lochatTests;
+			productName = lochatTests;
+			productReference = 59A49197218D6BD3005C7E0E /* lochatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		59A491A1218D6BD3005C7E0E /* lochatUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59A491B1218D6BD3005C7E0E /* Build configuration list for PBXNativeTarget "lochatUITests" */;
+			buildPhases = (
+				59A4919E218D6BD3005C7E0E /* Sources */,
+				59A4919F218D6BD3005C7E0E /* Frameworks */,
+				59A491A0218D6BD3005C7E0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				59A491A4218D6BD3005C7E0E /* PBXTargetDependency */,
+			);
+			name = lochatUITests;
+			productName = lochatUITests;
+			productReference = 59A491A2218D6BD3005C7E0E /* lochatUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		59A49179218D6BD2005C7E0E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = nakatayuki;
+				TargetAttributes = {
+					59A49180218D6BD2005C7E0E = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					59A49196218D6BD3005C7E0E = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 59A49180218D6BD2005C7E0E;
+					};
+					59A491A1218D6BD3005C7E0E = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 59A49180218D6BD2005C7E0E;
+					};
+				};
+			};
+			buildConfigurationList = 59A4917C218D6BD2005C7E0E /* Build configuration list for PBXProject "lochat" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 59A49178218D6BD2005C7E0E;
+			productRefGroup = 59A49182218D6BD2005C7E0E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				59A49180218D6BD2005C7E0E /* lochat */,
+				59A49196218D6BD3005C7E0E /* lochatTests */,
+				59A491A1218D6BD3005C7E0E /* lochatUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		59A4917F218D6BD2005C7E0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59A49191218D6BD3005C7E0E /* LaunchScreen.storyboard in Resources */,
+				59A4918E218D6BD3005C7E0E /* Assets.xcassets in Resources */,
+				59A4918C218D6BD2005C7E0E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59A49195218D6BD3005C7E0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59A491A0218D6BD3005C7E0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		59A4917D218D6BD2005C7E0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59A49189218D6BD2005C7E0E /* SecondViewController.swift in Sources */,
+				59A49185218D6BD2005C7E0E /* AppDelegate.swift in Sources */,
+				59A49187218D6BD2005C7E0E /* FirstViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59A49193218D6BD3005C7E0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59A4919C218D6BD3005C7E0E /* lochatTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59A4919E218D6BD3005C7E0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59A491A7218D6BD3005C7E0E /* lochatUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		59A49199218D6BD3005C7E0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 59A49180218D6BD2005C7E0E /* lochat */;
+			targetProxy = 59A49198218D6BD3005C7E0E /* PBXContainerItemProxy */;
+		};
+		59A491A4218D6BD3005C7E0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 59A49180218D6BD2005C7E0E /* lochat */;
+			targetProxy = 59A491A3218D6BD3005C7E0E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		59A4918A218D6BD2005C7E0E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				59A4918B218D6BD2005C7E0E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		59A4918F218D6BD3005C7E0E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				59A49190218D6BD3005C7E0E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		59A491A9218D6BD3005C7E0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		59A491AA218D6BD3005C7E0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		59A491AC218D6BD3005C7E0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3KKXY5S9W2;
+				INFOPLIST_FILE = lochat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = eggplant.com.lochat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		59A491AD218D6BD3005C7E0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3KKXY5S9W2;
+				INFOPLIST_FILE = lochat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = eggplant.com.lochat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		59A491AF218D6BD3005C7E0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3KKXY5S9W2;
+				INFOPLIST_FILE = lochatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = eggplant.com.lochatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lochat.app/lochat";
+			};
+			name = Debug;
+		};
+		59A491B0218D6BD3005C7E0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3KKXY5S9W2;
+				INFOPLIST_FILE = lochatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = eggplant.com.lochatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lochat.app/lochat";
+			};
+			name = Release;
+		};
+		59A491B2218D6BD3005C7E0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3KKXY5S9W2;
+				INFOPLIST_FILE = lochatUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = eggplant.com.lochatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = lochat;
+			};
+			name = Debug;
+		};
+		59A491B3218D6BD3005C7E0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3KKXY5S9W2;
+				INFOPLIST_FILE = lochatUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = eggplant.com.lochatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = lochat;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		59A4917C218D6BD2005C7E0E /* Build configuration list for PBXProject "lochat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59A491A9218D6BD3005C7E0E /* Debug */,
+				59A491AA218D6BD3005C7E0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		59A491AB218D6BD3005C7E0E /* Build configuration list for PBXNativeTarget "lochat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59A491AC218D6BD3005C7E0E /* Debug */,
+				59A491AD218D6BD3005C7E0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		59A491AE218D6BD3005C7E0E /* Build configuration list for PBXNativeTarget "lochatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59A491AF218D6BD3005C7E0E /* Debug */,
+				59A491B0218D6BD3005C7E0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		59A491B1218D6BD3005C7E0E /* Build configuration list for PBXNativeTarget "lochatUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59A491B2218D6BD3005C7E0E /* Debug */,
+				59A491B3218D6BD3005C7E0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 59A49179218D6BD2005C7E0E /* Project object */;
+}
