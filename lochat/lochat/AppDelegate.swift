@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        realmInit()
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if UserDefaults.standard.bool(forKey: UDKey_isJoinning) {
             //参加している時
@@ -29,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let initialViewController = storyboard.instantiateViewController(withIdentifier: "TabJoiningViewController")
                 self.window?.rootViewController = initialViewController
                 self.window?.makeKeyAndVisible()
+
             }else{
                 //イベントが終了していた時
                 UserDefaults.standard.set(false, forKey: UDKey_isJoinning)

@@ -32,6 +32,6 @@ extension EntranceViewController{
     }
     func setBackImage(){
         //TOOD: 画像が来たらここでviewの背景とイメージを指定する
-        self.view.backgroundColor = .black
+        self.view.backgroundColor = .white
     }
 }

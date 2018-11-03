@@ -13,6 +13,7 @@ import RealmSwift
 
 class QRViewController: UIViewController {
     var dismissButton = UIButton()
+    var joiningEvent:Event?
     
     //カメラ周り
     var captureSession: AVCaptureSession!
@@ -107,24 +108,22 @@ extension QRViewController:AVCaptureMetadataOutputObjectsDelegate {
     }
     
     func found(code: String) {
-        let joiningEvent = Event(eventURL: code)
-//        let realm = try! Realm()
-//        try! realm.write {
-//            realm.add(joiningEvent)
-//        }
-//        UserDefaults.standard.set(true, forKey: UDKey_isJoinning)
-//        UserDefaults.standard.set(joiningEvent.eventID, forKey: UDKey_joinedEventID)
-        if joiningEvent.isHolded(){
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let tabJoiningViewController = storyboard.instantiateViewController(withIdentifier: "TabJoiningViewController") as! UITabBarController
-            tabJoiningViewController.selectedIndex = 1
-            self.present(tabJoiningViewController, animated: true, completion: nil)
-        }else{
-            let alert = UIAlertController(title: "おっと君は開けないよ", message: nil, preferredStyle: .alert)
-            let alertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alert.addAction(alertAction)
-            self.present(alert, animated: true, completion: nil)
-        }
+//        joiningEvent = Event(eventURL: code, afterAllSuccess: segueToCameraView, afterFailed: afterFailedToOpen)
+        segueToCameraView()
+    }
+    
+    func segueToCameraView(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tabJoiningViewController = storyboard.instantiateViewController(withIdentifier: "TabJoiningViewController") as! UITabBarController
+        tabJoiningViewController.selectedIndex = 1
+        self.present(tabJoiningViewController, animated: true, completion: nil)
+    }
+    
+    func afterFailedToOpen(){
+        let alert = UIAlertController(title: "おっと君は開けないよ", message: nil, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(alertAction)
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

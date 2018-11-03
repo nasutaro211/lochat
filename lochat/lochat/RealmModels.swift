@@ -16,15 +16,16 @@ class Frame:Object{
     @objc dynamic var latitude:Float = 0.0
     @objc dynamic var radiusMeter:Float = 0.0
     @objc dynamic var event: Event!
-    @objc dynamic var startTime = "yyyyMMddHHmmss"
-    @objc dynamic var endTime = "yyyyMMddHHmmss"
+    @objc dynamic var startTime = 20181102190000
+    @objc dynamic var endTime = 20181104235959
     @objc dynamic var distance:Float = 0.0;
+    @objc dynamic var stilGot = false
     
     override static func primaryKey() -> String? {
         return "frameID"
     }
     
-    convenience init(frameID: String, event: Event){
+    convenience init(frameID: String, event: Event, afterAllSuccess: (() -> Void)?){
         self.init()
         
         let urlStr = "https://lochat-python.herokuapp.com/frame_detail?frame_id=" + frameID
@@ -57,23 +58,52 @@ class Frame:Object{
             self.longitude = (json["longitude"] as! NSNumber).floatValue
             self.latitude = (json["latitude"] as! NSNumber).floatValue
             self.radiusMeter = (json["distance"] as! NSNumber).floatValue
+            guard afterAllSuccess != nil else{
+                return
+            }
+            afterAllSuccess!()
         }
     }
     
-
-    //   TODO: ここ
+    
     static func returnMatchedFrames(lat:Float,long:Float)->Results<Frame>{
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyyMMddHHmmss"
-        let date = formatter.string(from: Date())
+        let date = Int(formatter.string(from: Date()))
         let realm = try! Realm()
         let frames = realm.objects(Frame.self)
         frames.forEach { (frame) in
             try! realm.write {
-                frame.distance = pow(pow(frame.latitude - lat,2) - pow(frame.longitude-long,2),0.5)
+                frame.distance = pow(pow(frame.latitude*110 - lat*110,2) - pow(frame.longitude*25-long*25,2),0.5)*1000
             }
         }
-        return frames.filter("(distance <= radiusMeter) AND (%@ <= endTime) AND (%@>=startTime)",date,date)
+        return frames.filter("(distance < radiusMeter) AND (%@ < endTime) AND (%@ > startTime)",date,date)
+//        let realm = try! Realm()
+//        let frames = realm.objects(Frame.self)
+//        return frames
+        
+    }
+    
+    static func createEventFrames(frameIds: [String], event: Event){
+        //全部突っ込んで非同期に処理してお尻で合わせてcallback
+//        let realm = try! Realm()
+//        frameIds.forEach { (id) in
+//            if event.defaultEventFrame?.frameID != id{
+//                let newFrame = Frame(frameID: id, event: event, afterAllSuccess: nil)
+//                try! realm.write{
+//                    realm.add(newFrame)
+//                }
+//            }
+//        }
+    }
+    
+    convenience init(json: Dictionary<String, Any>){
+        self.init()
+        self.frameID = json["id"] as! String
+        self.imagePath = json["image_path"] as! String
+        self.longitude = (json["longitude"] as! NSNumber).floatValue
+        self.latitude = (json["latitude"] as! NSNumber).floatValue
+        self.radiusMeter = (json["distance"] as! NSNumber).floatValue
         
     }
 }
@@ -91,10 +121,10 @@ class Event: Object{
     @objc dynamic var highlightImagesJSONStr = ""
     
     func isHolded()->Bool{
-        return false
+        return true
     }
     
-    convenience init(eventURL: String){
+    convenience init(eventURL: String, afterAllSuccess: (() -> Void)?, afterFailed: @escaping ()->()){
         self.init()
         let urlStr = eventURL
         var json:[String: Any] = [:]
@@ -121,23 +151,41 @@ class Event: Object{
         _ = semaphore.wait(timeout: DispatchTime.distantFuture)
         
         DispatchQueue.main.async {
-//            let realm = try! Realm()
-            self.eventID = json["id"] as! String
-            self.longitude = (json["longitude"] as! NSNumber).floatValue
-            self.latitude = (json["latitude"] as! NSNumber).floatValue
-            self.radiusMeter = (json["distance"] as! NSNumber).floatValue
-            let frameID = json["default_frame_id"] as! String
-            self.defaultEventFrame = Frame(frameID: frameID, event: self)
-            self.startDate = json["start_date"] as! String
-            self.endDate = json["end_date"] as! String
-            if let localeFrameIDs = json["frame_ids"] as? Array<String>{
-                localeFrameIDs.forEach { (id) in
-                    let newFrame = Frame(frameID: id, event: self)
-//                    try! realm.write{
-//                        realm.add(newFrame)
-//                    }
+            let realm = try! Realm()
+            try! realm.write {
+                self.eventID = json["id"] as! String
+                self.longitude = (json["longitude"] as! NSNumber).floatValue
+                self.latitude = (json["latitude"] as! NSNumber).floatValue
+                self.radiusMeter = (json["distance"] as! NSNumber).floatValue
+                self.startDate = json["start_date"] as! String
+                self.endDate = json["end_date"] as! String
+                //バリデーションをかけて
+                if self.isHolded(){
+                    UserDefaults.standard.set(true, forKey: UDKey_isJoinning)
+                    UserDefaults.standard.set(self.eventID, forKey: UDKey_joinedEventID)
+                    realm.add(self)
+                }else{
+                    afterFailed()
                 }
             }
+            if self.isHolded(){
+                let defaultFrameID = json["default_frame_id"] as! String
+                self.defaultEventFrame = Frame(frameID: defaultFrameID, event: self, afterAllSuccess: afterAllSuccess)
+                let localeFrameIDs = json["frame_ids"] as! Array<String>
+                Frame.createEventFrames(frameIds: localeFrameIDs, event: self)
+            }
         }
+        
+
     }
+    convenience init(json: Dictionary<String, Any>){
+        self.init()
+        self.eventID = json["id"] as! String
+        self.longitude = (json["longitude"] as! NSNumber).floatValue
+        self.latitude = (json["latitude"] as! NSNumber).floatValue
+        self.radiusMeter = (json["distance"] as! NSNumber).floatValue
+        self.startDate = json["start_date"] as! String
+        self.endDate = json["end_date"] as! String
+    }
+
 }
