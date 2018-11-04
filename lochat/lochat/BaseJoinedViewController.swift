@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import RealmSwift
 
 class BaseJoinedViewController: UIViewController {
+    var eventColor = UIColor()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let realm = try! Realm()
+        let colorcode = realm.object(ofType: Event.self, forPrimaryKey: UserDefaults.standard.string(forKey: UDKey_joinedEventID))?.colorCode
+        self.eventColor = UIColor(hex: colorcode!)
+        navigationController?.navigationBar.barTintColor = eventColor
+        navigationItem.titleView = UIImageView(image: UIImage(named: "navImage")?.resize(width: mainFrame.width*0.5))
     }
     
 

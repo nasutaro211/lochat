@@ -78,18 +78,7 @@ class Frame:Object{
         
     }
     
-    static func createEventFrames(frameIds: [String], event: Event){
-        //全部突っ込んで非同期に処理してお尻で合わせてcallback
-        //        let realm = try! Realm()
-        //        frameIds.forEach { (id) in
-        //            if event.defaultEventFrame?.frameID != id{
-        //                let newFrame = Frame(frameID: id, event: event, afterAllSuccess: nil)
-        //                try! realm.write{
-        //                    realm.add(newFrame)
-        //                }
-        //            }
-        //        }
-    }
+    
     
     convenience init(json: Dictionary<String, Any>){
         self.init()
@@ -98,6 +87,8 @@ class Frame:Object{
         self.longitude = (json["longitude"] as! NSNumber).floatValue
         self.latitude = (json["latitude"] as! NSNumber).floatValue
         self.radiusMeter = (json["distance"] as! NSNumber).floatValue
+        self.startTime = Int(json["start_date"] as! String)!
+        self.endTime = Int(json["end_date"] as! String)!
         
     }
 }
@@ -163,7 +154,6 @@ class Event: Object{
         _ = semaphore.wait(timeout: DispatchTime.distantFuture)
         
         
-        let realm = try! Realm()
         self.init()
         self.eventID = json["id"] as! String
         self.longitude = (json["longitude"] as! NSNumber).floatValue
@@ -178,14 +168,44 @@ class Event: Object{
             UserDefaults.standard.set(self.eventID, forKey: UDKey_joinedEventID)
             let defaultFrameID = json["default_frame_id"] as! String
             self.defaultEventFrame = Frame(frameID: defaultFrameID, event: self)
-        }
-        if self.isHolded(){
-            
             let localeFrameIDs = json["frame_ids"] as! Array<String>
+            createFrames(frameIds: localeFrameIDs, eventID: self.eventID)
         }
-        
     }
-
     
+    func createFrames(frameIds: [String], eventID: String){
+        frameIds.forEach { (frameID) in
+            let urlStr =  "http://153.125.225.54:5000/frame_detail?frame_id=" + frameID
+            var json:[String: Any] = [:]
+            //QRコードの中身を使って何かをする機能
+            let request = NSMutableURLRequest(url: URL(string: urlStr)!)
+            request.httpMethod = "GET"
+            let task = URLSession.shared.dataTask(with: request as URLRequest) { (data, response, error) in
+                if let data = data, let response = response {
+                    print(response)
+                    do {
+                        json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! [String: Any]
+                        self.addFrame(json: json, eventID: eventID)
+                    } catch {
+                        print("Serialize Error")
+                    }
+                } else {
+                    print(error ?? "Error")
+                }
+            }
+            task.resume()
+        }
+
+    }
+    
+    func addFrame(json: Dictionary<String, Any>, eventID: String){
+        let realm = try! Realm()
+        let event = realm.object(ofType: Event.self, forPrimaryKey: eventID)
+        let frame = Frame.init(json: json)
+        frame.event = event!
+        try! realm.write {
+            realm.add(frame, update: true)
+        }
+    }
     
 }

@@ -11,7 +11,7 @@ import CoreLocation
 import RealmSwift
 import AVFoundation
 
-class CameraViewController: UIViewController, CLLocationManagerDelegate, UIGestureRecognizerDelegate, AVCaptureVideoDataOutputSampleBufferDelegate{
+class CameraViewController: BaseJoinedViewController, CLLocationManagerDelegate, UIGestureRecognizerDelegate, AVCaptureVideoDataOutputSampleBufferDelegate{
     var input:AVCaptureDeviceInput!
     var output:AVCaptureVideoDataOutput!
     var session:AVCaptureSession!
@@ -19,8 +19,6 @@ class CameraViewController: UIViewController, CLLocationManagerDelegate, UIGestu
     var imageView:UIImageView!
     var frameImageView:UIImageView!
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
-    var shutterButton:UIButton!
-    var shutterShadowView: UIView!
     var rotate:CGFloat = 0//上が上の時→0, 右が上の時→90, 左が上の時→270
     var audioPlayer: AVAudioPlayer!//シャッター音用
     var usableFrame: [Frame] = []
@@ -39,8 +37,6 @@ class CameraViewController: UIViewController, CLLocationManagerDelegate, UIGestu
         // Viewにタップ、ピンチのジェスチャーを追加
         self.view.addGestureRecognizer(tapGesture)
         self.view.addGestureRecognizer(pinchGesture)
-        //色々
-        addShutterButtonAndUnderView()
 
     }
     
@@ -51,6 +47,8 @@ class CameraViewController: UIViewController, CLLocationManagerDelegate, UIGestu
 
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         setupDisplay()
         setupCamera()
     }
@@ -246,38 +244,15 @@ class CameraViewController: UIViewController, CLLocationManagerDelegate, UIGestu
 
 
 extension CameraViewController{
-    func addShutterButtonAndUnderView(){
-        //下側の写真撮るようのview
-        //サイズ変える
-
-        //シャッターボタンを追加
-        shutterButton = UIButton(frame: CGRect(origin: CGPoint(x: 150,y :400), size: CGSize(width: 70, height: 70)))
-        shutterButton.center = CGPoint(x: view.frame.size.width/2, y: 500)
-        shutterButton.backgroundColor = mainColor.withAlphaComponent(0)
-        shutterButton.layer.masksToBounds = true
-        shutterButton.layer.cornerRadius = shutterButton.frame.size.width/2
-        shutterButton.layer.borderColor = mainColor.cgColor
-        shutterButton.layer.borderWidth = 6
-        shutterButton.addTarget(self, action: #selector(tapedShutterButton), for: .touchUpInside)
-        view.addSubview(shutterButton)
-        //真ん中のview
-        shutterShadowView = UIView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: shutterButton.frame.size.height-18, height: shutterButton.frame.size.height-18)))
-        shutterShadowView.center = CGPoint(x: shutterButton.frame.size.width/2, y: shutterButton.frame.size.height/2)
-        shutterShadowView.backgroundColor = mainColor
-        shutterShadowView.layer.masksToBounds = true
-        shutterShadowView.layer.cornerRadius = shutterShadowView.frame.size.width/2
-        shutterShadowView.isUserInteractionEnabled = false
-        shutterButton.addSubview(shutterShadowView)
-    }
-    
-    
-    
     
     func setupDisplay(){
         // カメラからの映像を映すimageViewの作成
         if let iv = imageView {
             //以前のimageViewがあれば剥がしておく(imageViewが残っていないか確認最初は入ってない)
             iv.removeFromSuperview()
+        }
+        if let fiv = frameImageView{
+            fiv.removeFromSuperview()
         }
         imageView = UIImageView()
         view.addSubview(imageView)
@@ -301,7 +276,7 @@ extension CameraViewController{
             make.height.equalTo(imageView.snp.width)
             make.centerY.equalTo(view).offset(-70)
         })
-        
+        self.view.layoutIfNeeded()
     }
     
     
@@ -374,7 +349,6 @@ extension CameraViewController{
     
     // 新しいキャプチャの追加で呼ばれる
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection){
-        
         // キャプチャしたsampleBufferからUIImageを作成
         let image:UIImage = self.captureImage(sampleBuffer: sampleBuffer)
         // カメラの画像を画面に表示

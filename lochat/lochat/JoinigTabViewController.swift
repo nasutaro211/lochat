@@ -24,6 +24,7 @@ class JoinigTabViewController: CenterBigTabViewController {
         let realm = try! Realm()
         let colorcode = realm.object(ofType: Event.self, forPrimaryKey: UserDefaults.standard.string(forKey: UDKey_joinedEventID))?.colorCode
         self.eventColor = UIColor(hex: colorcode!)
+        button.removeTarget(self, action: #selector(self.to1View), for: .touchUpInside)
         button.addTarget(self, action: #selector(didPushCenterButton), for: .touchUpInside)
         tabBar.barTintColor = eventColor
         tabBar.tintColor = .white
@@ -32,33 +33,42 @@ class JoinigTabViewController: CenterBigTabViewController {
     }
     
     @objc func didPushCenterButton(){
-        switch tabBarController?.selectedIndex {
+        switch self.selectedIndex {
         case 0:
-            tabBarController?.selectedIndex = 1
+            self.selectedIndex = 1
             break
         case 1:
-            let cameraViewController = self.selectedViewController as! CameraViewController
+            let navigationViewController = self.selectedViewController as! UINavigationController
+            let cameraViewController = navigationViewController.viewControllers[0] as! CameraViewController
             cameraViewController.tapedShutterButton()
             break
         case 2:
-            tabBarController?.selectedIndex = 1
+            self.selectedIndex = 1
             break
         default:
+            let navigationViewController = self.selectedViewController as! UINavigationController
+            let cameraViewController = navigationViewController.viewControllers[0] as! CameraViewController
+            cameraViewController.tapedShutterButton()
             break
         }
     }
     
     func changeButtonSize(){
-        switch tabBarController?.selectedIndex {
+        switch self.selectedIndex {
         case 0:
             button.setImage(UIImage(named: "joiningCenterTabButton")?.resize(width: mainFrame.width*0.3), for: .normal)
+            button.layoutIfNeeded()
             break
         case 1:
             button.setImage(UIImage(named: "joiningCenterTabButton")?.resize(width: mainFrame.width*0.4), for: .normal)
+            button.layoutIfNeeded()
             break
         case 2:
             button.setImage(UIImage(named: "joiningCenterTabButton")?.resize(width: mainFrame.width*0.3), for: .normal)
+            button.layoutIfNeeded()
         default:
+            button.setImage(UIImage(named: "joiningCenterTabButton")?.resize(width: mainFrame.width*0.4), for: .normal)
+            button.layoutIfNeeded()
             break
         }
         button.sizeToFit()
