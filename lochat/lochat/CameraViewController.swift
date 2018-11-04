@@ -98,7 +98,9 @@ class CameraViewController: UIViewController, CLLocationManagerDelegate, UIGestu
     }
     
     // タップイベント.
-    @objc func tapedShutterButton(sender: UIButton) {
+    @objc func tapedShutterButton() {
+        let realm = try! Realm()
+        
         takeStillPicture()
         self.imageView.alpha = 0.25
         UIView.animate(withDuration: 0.1, delay: 0.15, options: .curveEaseOut, animations: {
@@ -226,7 +228,7 @@ class CameraViewController: UIViewController, CLLocationManagerDelegate, UIGestu
     func updateFrames(latitude: Float, longitude: Float){
         var newUsableFrame: [Frame] = []
         let frames = Frame.returnMatchedFrames(lat: latitude, long: longitude)
-        print(frames)
+//        print(frames)
         if !frames.isEmpty{
             frames.forEach { (frame) in
                 newUsableFrame.append(frame)
@@ -256,7 +258,7 @@ extension CameraViewController{
         shutterButton.layer.cornerRadius = shutterButton.frame.size.width/2
         shutterButton.layer.borderColor = mainColor.cgColor
         shutterButton.layer.borderWidth = 6
-        shutterButton.addTarget(self, action: #selector(tapedShutterButton(sender:)), for: .touchUpInside)
+        shutterButton.addTarget(self, action: #selector(tapedShutterButton), for: .touchUpInside)
         view.addSubview(shutterButton)
         //真ん中のview
         shutterShadowView = UIView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: shutterButton.frame.size.height-18, height: shutterButton.frame.size.height-18)))
@@ -382,6 +384,7 @@ extension CameraViewController{
     }
     
     func takeStillPicture(){
+        let realm = try! Realm()
         if var _:AVCaptureConnection? = output.connection(with: AVMediaType.video){
             // アルバムに追加
             let bottomImage = imageView.croppingImage()
@@ -390,10 +393,12 @@ extension CameraViewController{
             UIGraphicsBeginImageContext(size)
             let areaSize = CGRect(x: 0, y: 0, width: size.width, height: size.height)
             bottomImage.draw(in: areaSize)
-            topImage.draw(in: areaSize, blendMode: .normal, alpha: 0.8)
+            topImage.draw(in: areaSize, blendMode: .normal, alpha: 1.0)
             var newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
             UIGraphicsEndImageContext()
             UIImageWriteToSavedPhotosAlbum(newImage, self, nil, nil)
+            let imageManager = ImageManager()
+            imageManager.send_to_flask(originImage: bottomImage, framedImage: newImage)
         }
     }
     

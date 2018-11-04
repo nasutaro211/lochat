@@ -329,7 +329,7 @@
         <!--TabJoiningViewController-->
         <scene sceneID="Z6L-eb-5L3">
             <objects>
-                <tabBarController storyboardIdentifier="TabJoiningViewController" id="rov-kx-1lv" userLabel="TabJoiningViewController" customClass="TabJoiningViewController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabJoiningViewController" id="rov-kx-1lv" userLabel="TabJoiningViewController" customClass="JoinigTabViewController" customModule="lochat" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vJW-tz-J0Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

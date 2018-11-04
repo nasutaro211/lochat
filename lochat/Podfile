@@ -9,6 +9,7 @@ target 'lochat' do
 pod ‘Firebase/Core’
 pod 'RealmSwift'
 pod 'SnapKit', '~> 4.0.0'
+pod 'Alamofire', '~> 4.7'
 
   target 'lochatTests' do
     inherit! :search_paths

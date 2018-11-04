@@ -20,6 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         realmInit()
         
+        if UserDefaults.standard.string(forKey: UDKey_userID) == nil {
+            UserDefaults.standard.set(UUID.init().uuidString, forKey: UDKey_userID)
+        }
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if UserDefaults.standard.bool(forKey: UDKey_isJoinning) {
             //参加している時

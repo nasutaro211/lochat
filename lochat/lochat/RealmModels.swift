@@ -25,7 +25,7 @@ class Frame:Object{
         return "frameID"
     }
     
-    convenience init(frameID: String, event: Event, afterAllSuccess: (() -> Void)?){
+    convenience init(frameID: String, event: Event){
         self.init()
         
         let urlStr = "https://lochat-python.herokuapp.com/frame_detail?frame_id=" + frameID
@@ -52,17 +52,11 @@ class Frame:Object{
         }
         _ = semaphore.wait(timeout: DispatchTime.distantFuture)
         
-        DispatchQueue.main.async {
-            self.frameID = frameID
-            self.imagePath = json["image_path"] as! String
-            self.longitude = (json["longitude"] as! NSNumber).floatValue
-            self.latitude = (json["latitude"] as! NSNumber).floatValue
-            self.radiusMeter = (json["distance"] as! NSNumber).floatValue
-            guard afterAllSuccess != nil else{
-                return
-            }
-            afterAllSuccess!()
-        }
+        self.frameID = frameID
+        self.imagePath = json["image_path"] as! String
+        self.longitude = (json["longitude"] as! NSNumber).floatValue
+        self.latitude = (json["latitude"] as! NSNumber).floatValue
+        self.radiusMeter = (json["distance"] as! NSNumber).floatValue
     }
     
     
@@ -78,23 +72,23 @@ class Frame:Object{
             }
         }
         return frames.filter("(distance < radiusMeter) AND (%@ < endTime) AND (%@ > startTime)",date,date)
-//        let realm = try! Realm()
-//        let frames = realm.objects(Frame.self)
-//        return frames
+        //        let realm = try! Realm()
+        //        let frames = realm.objects(Frame.self)
+        //        return frames
         
     }
     
     static func createEventFrames(frameIds: [String], event: Event){
         //全部突っ込んで非同期に処理してお尻で合わせてcallback
-//        let realm = try! Realm()
-//        frameIds.forEach { (id) in
-//            if event.defaultEventFrame?.frameID != id{
-//                let newFrame = Frame(frameID: id, event: event, afterAllSuccess: nil)
-//                try! realm.write{
-//                    realm.add(newFrame)
-//                }
-//            }
-//        }
+        //        let realm = try! Realm()
+        //        frameIds.forEach { (id) in
+        //            if event.defaultEventFrame?.frameID != id{
+        //                let newFrame = Frame(frameID: id, event: event, afterAllSuccess: nil)
+        //                try! realm.write{
+        //                    realm.add(newFrame)
+        //                }
+        //            }
+        //        }
     }
     
     convenience init(json: Dictionary<String, Any>){
@@ -119,21 +113,31 @@ class Event: Object{
     @objc dynamic var startDate = "20181102183000"
     @objc dynamic var endDate = "20181104235959"
     @objc dynamic var highlightImagesJSONStr = ""
+    @objc dynamic var colorCode = "000000"
+    
+    override static func primaryKey() -> String? {
+        return "eventID"
+    }
+    
+    
     
     func isHolded()->Bool{
-
+        
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyyMMddHHmmss"
         let dateString = formatter.string(from: Date())
- 
+        
         if startDate <= dateString && endDate >= dateString{
             return true
         }
         return false
     }
     
-    convenience init(eventURL: String, afterAllSuccess: (() -> Void)?, afterFailed: @escaping ()->()){
-        self.init()
+    //    init(eventID: String){
+    //        self.eventID = eventID
+    //    }
+    
+    convenience init(eventURL: String){
         let urlStr = eventURL
         var json:[String: Any] = [:]
         //QRコードの中身を使って何かをする機能
@@ -158,35 +162,8 @@ class Event: Object{
         }
         _ = semaphore.wait(timeout: DispatchTime.distantFuture)
         
-        DispatchQueue.main.async {
-            let realm = try! Realm()
-            try! realm.write {
-                self.eventID = json["id"] as! String
-                self.longitude = (json["longitude"] as! NSNumber).floatValue
-                self.latitude = (json["latitude"] as! NSNumber).floatValue
-                self.radiusMeter = (json["distance"] as! NSNumber).floatValue
-                self.startDate = json["start_date"] as! String
-                self.endDate = json["end_date"] as! String
-                //バリデーションをかけて
-                if self.isHolded(){
-                    UserDefaults.standard.set(true, forKey: UDKey_isJoinning)
-                    UserDefaults.standard.set(self.eventID, forKey: UDKey_joinedEventID)
-                    realm.add(self)
-                }else{
-                    afterFailed()
-                }
-            }
-            if self.isHolded(){
-                let defaultFrameID = json["default_frame_id"] as! String
-                self.defaultEventFrame = Frame(frameID: defaultFrameID, event: self, afterAllSuccess: afterAllSuccess)
-                let localeFrameIDs = json["frame_ids"] as! Array<String>
-                Frame.createEventFrames(frameIds: localeFrameIDs, event: self)
-            }
-        }
         
-
-    }
-    convenience init(json: Dictionary<String, Any>){
+        let realm = try! Realm()
         self.init()
         self.eventID = json["id"] as! String
         self.longitude = (json["longitude"] as! NSNumber).floatValue
@@ -194,6 +171,21 @@ class Event: Object{
         self.radiusMeter = (json["distance"] as! NSNumber).floatValue
         self.startDate = json["start_date"] as! String
         self.endDate = json["end_date"] as! String
+        self.colorCode = json["color_code"] as! String
+        //バリデーションをかけて
+        if self.isHolded(){
+            UserDefaults.standard.set(true, forKey: UDKey_isJoinning)
+            UserDefaults.standard.set(self.eventID, forKey: UDKey_joinedEventID)
+            let defaultFrameID = json["default_frame_id"] as! String
+            self.defaultEventFrame = Frame(frameID: defaultFrameID, event: self)
+        }
+        if self.isHolded(){
+            
+            let localeFrameIDs = json["frame_ids"] as! Array<String>
+        }
+        
     }
 
+    
+    
 }

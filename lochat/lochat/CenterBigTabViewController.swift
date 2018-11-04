@@ -9,10 +9,10 @@
 import UIKit
 
 class CenterBigTabViewController: UITabBarController {
+    let button = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let button = UIButton()
         button.setImage(UIImage(named: "centerTabButton")?.resize(width: mainFrame.width*0.3), for: .normal)
         button.sizeToFit()
         button.translatesAutoresizingMaskIntoConstraints = false

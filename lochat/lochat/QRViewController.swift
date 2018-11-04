@@ -108,7 +108,11 @@ extension QRViewController:AVCaptureMetadataOutputObjectsDelegate {
     }
     
     func found(code: String) {
-//        joiningEvent = Event(eventURL: code, afterAllSuccess: segueToCameraView, afterFailed: afterFailedToOpen)
+        joiningEvent = Event(eventURL: code)
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(joiningEvent!)
+        }
         segueToCameraView()
     }
     
