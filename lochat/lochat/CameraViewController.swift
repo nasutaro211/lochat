@@ -22,13 +22,14 @@ class CameraViewController: BaseJoinedViewController, CLLocationManagerDelegate,
     var rotate:CGFloat = 0//上が上の時→0, 右が上の時→90, 左が上の時→270
     var audioPlayer: AVAudioPlayer!//シャッター音用
     var usableFrame: [Frame] = []
+    var collectionView: UICollectionView!
     
     var locationManager: CLLocationManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLocationManager()
-
+        
         // 画面タップでピントをあわせる
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(CameraViewController.tappedScreen(gestureRecognizer:)))
         let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(CameraViewController.pinchedGesture(gestureRecgnizer:)))
@@ -37,20 +38,22 @@ class CameraViewController: BaseJoinedViewController, CLLocationManagerDelegate,
         // Viewにタップ、ピンチのジェスチャーを追加
         self.view.addGestureRecognizer(tapGesture)
         self.view.addGestureRecognizer(pinchGesture)
-
+        
+        
     }
     
     
     
-
     
-
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         setupDisplay()
         setupCamera()
+        setCollectionView()
     }
     
     override func viewDidLayoutSubviews() {
@@ -105,7 +108,7 @@ class CameraViewController: BaseJoinedViewController, CLLocationManagerDelegate,
             self.imageView.alpha = 1
         }, completion: nil)
     }
-
+    
     
     
     let focusView = UIView()
@@ -171,10 +174,10 @@ class CameraViewController: BaseJoinedViewController, CLLocationManagerDelegate,
     }
     
     
-
     
-
-
+    
+    
+    
     
     @objc func didOrientationChange(){
         let deviceOrientation: UIDeviceOrientation  = UIDevice.current.orientation
@@ -194,11 +197,11 @@ class CameraViewController: BaseJoinedViewController, CLLocationManagerDelegate,
         }
     }
     
-
-
     
-
-
+    
+    
+    
+    
     
     func setupLocationManager(){
         locationManager = CLLocationManager()
@@ -217,7 +220,7 @@ class CameraViewController: BaseJoinedViewController, CLLocationManagerDelegate,
         let longitude = location?.coordinate.longitude
         let now = Date()
         updateFrames(latitude: Float(latitude!), longitude: Float(longitude!))
-
+        
     }
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         print("didChangeAuthorization")
@@ -226,18 +229,59 @@ class CameraViewController: BaseJoinedViewController, CLLocationManagerDelegate,
     func updateFrames(latitude: Float, longitude: Float){
         var newUsableFrame: [Frame] = []
         let frames = Frame.returnMatchedFrames(lat: latitude, long: longitude)
-//        print(frames)
+        //        print(frames)
         if !frames.isEmpty{
             frames.forEach { (frame) in
                 newUsableFrame.append(frame)
             }
         }
-
+        
         usableFrame = newUsableFrame
         //TODO: フロントをアップデートする機能もつける
-        
+        collectionView.reloadData()
     }
 }
+
+
+
+extension CameraViewController:UICollectionViewDelegate, UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return usableFrame.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FrameCollectionViewCell", for: indexPath) as! FrameCollectionViewCell
+        cell.setUp(frame: usableFrame[indexPath.row])
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        frameImageView.image = (collectionView.cellForItem(at: indexPath) as! FrameCollectionViewCell).imageView.image
+    }
+    
+    func setCollectionView(){
+        var layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 40, height: 40)
+        layout.minimumLineSpacing = 20
+        layout.minimumInteritemSpacing = 20
+        collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(FrameCollectionViewCell.self, forCellWithReuseIdentifier: "FrameCollectionViewCell")
+        self.view.addSubview(collectionView)
+        collectionView.snp.makeConstraints { (make) in
+            make.top.equalTo(imageView.snp.bottom).offset(15)
+            make.height.equalTo(80)
+            make.centerX.equalTo(view)
+            make.width.equalTo(140)
+        }
+    }
+}
+
+
+
+
+
 
 
 
@@ -422,7 +466,7 @@ extension CameraViewController{
             }
             
         }
-}
+    }
 }
 
 

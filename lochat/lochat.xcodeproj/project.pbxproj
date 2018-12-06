@@ -15,6 +15,9 @@
 		5991077D218E6C650061BE15 /* JoinigTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5991077C218E6C650061BE15 /* JoinigTabViewController.swift */; };
 		5991077F218E937C0061BE15 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5991077E218E937C0061BE15 /* UIColorExtention.swift */; };
 		59910781218EA8250061BE15 /* BaseJoinedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59910780218EA8250061BE15 /* BaseJoinedViewController.swift */; };
+		59910783218EC4520061BE15 /* FrameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59910782218EC4520061BE15 /* FrameCollectionViewCell.swift */; };
+		59910787218ECECA0061BE15 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59910786218ECECA0061BE15 /* ModalViewController.swift */; };
+		59910789218ED3EF0061BE15 /* MemoryHighlightVIewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59910788218ED3EF0061BE15 /* MemoryHighlightVIewControllerViewController.swift */; };
 		59A49185218D6BD2005C7E0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A49184218D6BD2005C7E0E /* AppDelegate.swift */; };
 		59A4918C218D6BD2005C7E0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A4918A218D6BD2005C7E0E /* Main.storyboard */; };
 		59A4918E218D6BD3005C7E0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59A4918D218D6BD3005C7E0E /* Assets.xcassets */; };
@@ -66,6 +69,9 @@
 		5991077C218E6C650061BE15 /* JoinigTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinigTabViewController.swift; sourceTree = "<group>"; };
 		5991077E218E937C0061BE15 /* UIColorExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIColorExtention.swift; path = lochat/UIColorExtention.swift; sourceTree = "<group>"; };
 		59910780218EA8250061BE15 /* BaseJoinedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseJoinedViewController.swift; sourceTree = "<group>"; };
+		59910782218EC4520061BE15 /* FrameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameCollectionViewCell.swift; sourceTree = "<group>"; };
+		59910786218ECECA0061BE15 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		59910788218ED3EF0061BE15 /* MemoryHighlightVIewControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryHighlightVIewControllerViewController.swift; sourceTree = "<group>"; };
 		59A49181218D6BD2005C7E0E /* lochat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lochat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A49184218D6BD2005C7E0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59A4918B218D6BD2005C7E0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -161,6 +167,9 @@
 		59A49183218D6BD2005C7E0E /* lochat */ = {
 			isa = PBXGroup;
 			children = (
+				59910788218ED3EF0061BE15 /* MemoryHighlightVIewControllerViewController.swift */,
+				59910786218ECECA0061BE15 /* ModalViewController.swift */,
+				59910782218EC4520061BE15 /* FrameCollectionViewCell.swift */,
 				5991077C218E6C650061BE15 /* JoinigTabViewController.swift */,
 				5991077A218E5EE30061BE15 /* ImageManager.swift */,
 				59910774218E0A3B0061BE15 /* CenterBigTabViewController.swift */,
@@ -523,6 +532,7 @@
 			files = (
 				59A491B5218D8D38005C7E0E /* MypageViewController.swift in Sources */,
 				59A491B9218D8D8E005C7E0E /* QRViewController.swift in Sources */,
+				59910783218EC4520061BE15 /* FrameCollectionViewCell.swift in Sources */,
 				59A49185218D6BD2005C7E0E /* AppDelegate.swift in Sources */,
 				59A491B7218D8D7A005C7E0E /* EntranceViewController.swift in Sources */,
 				59910777218E0C4A0061BE15 /* toUseImageResize.swift in Sources */,
@@ -536,8 +546,10 @@
 				E889857F218D8545004B508D /* HighlightsTableViewCell.swift in Sources */,
 				59910773218DB2BB0061BE15 /* RealmModels.swift in Sources */,
 				5991077F218E937C0061BE15 /* UIColorExtention.swift in Sources */,
+				59910787218ECECA0061BE15 /* ModalViewController.swift in Sources */,
 				59A491BB218D8DAC005C7E0E /* CameraViewController.swift in Sources */,
 				5991077D218E6C650061BE15 /* JoinigTabViewController.swift in Sources */,
+				59910789218ED3EF0061BE15 /* MemoryHighlightVIewControllerViewController.swift in Sources */,
 				59A491BF218D8DDB005C7E0E /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

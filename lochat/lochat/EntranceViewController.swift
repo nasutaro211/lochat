@@ -9,7 +9,7 @@
 import UIKit
 
 class EntranceViewController: BaseViewController {
-    var isJustLogout = false
+    var isJustLogout = true
     var logoutedEvent:Event?
     @IBOutlet var toQRButton: UIButton!
     @IBOutlet var backImageView: UIImageView!
@@ -30,6 +30,24 @@ class EntranceViewController: BaseViewController {
     @objc func didPushToQRButton(){
         let destination = QRViewController()
         self.present(destination, animated: true, completion: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if isJustLogout {
+            presentModal()
+        }
+    }
+    
+    
+    
+    func presentModal(){
+        sleep(1)
+        let modalView = ModalViewController()
+        modalView.modalPresentationStyle = .overCurrentContext
+        modalView.modalTransitionStyle = .crossDissolve
+        present(modalView, animated: true, completion: nil)
+        isJustLogout = false
     }
 }
 
